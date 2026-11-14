@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<title>Dit — Morse Trainer</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span><span class="dash"></span><b>Dit</b></div>
+  <div class="stats"><span id="wpmBadge">20 WPM</span><span id="streak">🔥 0</span></div>
+</header>
+
+<main>
+  <!-- LEARN -->
+  <section id="learn" class="view active">
+    <h1>Learn</h1>
+    <p class="sub">Koch method — master one character at a time.</p>
+    <div class="card hero">
+      <div class="big-char" id="learnChar">K</div>
+      <div class="pattern" id="learnPattern"></div>
+      <div class="row">
+        <button class="btn ghost" id="learnPrev">‹</button>
+        <button class="btn primary" id="learnPlay">▶ Play</button>
+        <button class="btn ghost" id="learnNext">›</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><h2>Your lesson</h2><span id="kochLevel" class="pill">Level 2</span></div>
+      <div class="grid" id="charGrid"></div>
+    </div>
+  </section>
+
+  <!-- COPY -->
+  <section id="copy" class="view">
+    <h1>Copy</h1>
+    <p class="sub">Listen and type what you hear.</p>
+    <div class="card hero">
+      <div class="wave" id="wave"></div>
+      <div class="feedback" id="copyFeedback">Press start</div>
+      <input id="copyInput" class="answer" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Type here…">
+      <div class="row">
+        <button class="btn ghost" id="copyReplay">↻ Replay</button>
+        <button class="btn primary" id="copyStart">Start</button>
+      </div>
+    </div>
+    <div class="card meter">
+      <div><span id="accPct">—</span><small>Accuracy</small></div>
+      <div><span id="copyCount">0</span><small>Copied</small></div>
+      <div><span id="bestStreak">0</span><small>Best streak</small></div>
+    </div>
+  </section>
+
+  <!-- SEND -->
+  <section id="send" class="view">
+    <h1>Send</h1>
+    <p class="sub">Tap the key (or hold Space). Gaps decode automatically.</p>
+    <div class="card hero">
+      <div class="target">Send: <b id="sendTarget">PARIS</b></div>
+      <div class="tape" id="tape"></div>
+      <div class="decoded" id="decoded">&nbsp;</div>
+      <button class="key" id="key" aria-label="Morse key"><span></span></button>
+      <div class="row">
+        <button class="btn ghost" id="sendClear">Clear</button>
+        <button class="btn ghost" id="sendNew">New word</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREE -->
+  <section id="tree" class="view">
+    <h1>Tree</h1>
+    <p class="sub">Key with Space or the button and follow your path. Tap any letter to hear it.</p>
+    <div class="pcb-wrap"><svg id="treeSvg" viewBox="0 0 400 436" role="img" aria-label="Morse code tree"></svg></div>
+    <div class="card hero tree-panel">
+      <div class="tree-out" id="treeOut">&nbsp;</div>
+      <div class="decoded" id="treeText">&nbsp;</div>
+      <button class="key small" id="treeKey" aria-label="Morse key"><span></span></button>
+      <div class="row"><button class="btn ghost" id="treeClear">Clear</button></div>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="settings" class="view">
+    <h1>Settings</h1>
+    <div class="card form">
+      <h2 style="margin-bottom:12px">Theme</h2>
+      <div class="themes" id="themes"></div>
+      <label>Character speed <output id="wpmOut">20</output> WPM
+        <input type="range" id="wpm" min="5" max="40" value="20"></label>
+      <label>Effective speed (Farnsworth) <output id="effOut">10</output> WPM
+        <input type="range" id="eff" min="3" max="40" value="10"></label>
+      <label>Tone <output id="toneOut">600</output> Hz
+        <input type="range" id="tone" min="300" max="1000" step="10" value="600"></label>
+      <label>Volume
+        <input type="range" id="vol" min="0" max="1" step="0.05" value="0.5"></label>
+      <label>Group length <output id="grpOut">1</output>
+        <input type="range" id="grp" min="1" max="5" value="1"></label>
+      <h2 class="sect">Unlocking letters</h2>
+      <label>Unlock at <output id="thrOut">90</output>% accuracy
+        <input type="range" id="thr" min="70" max="100" step="5" value="90"></label>
+      <label>Judge on the last <output id="winOut">20</output> attempts per letter
+        <input type="range" id="win" min="5" max="50" step="5" value="20"></label>
+      <label>Minimum attempts per letter <output id="minOut">10</output>
+        <input type="range" id="minN" min="3" max="30" value="10"></label>
+      <button class="btn danger" id="reset">Reset progress</button>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs">
+  <button data-view="learn" class="on"><i>◉</i>Learn</button>
+  <button data-view="copy"><i>◎</i>Copy</button>
+  <button data-view="send"><i>⏺</i>Send</button>
+  <button data-view="tree"><i>⑂</i>Tree</button>
+  <button data-view="settings"><i>⚙</i>Settings</button>
+</nav>
+<script src="app.js"></script>
+<script src="tree.js"></script>
+</body>
+</html>
