@@ -1,5 +1,10 @@
 # Dit — Morse Trainer
 
+[![Try it live](https://img.shields.io/badge/▶_Try_it_live-bitdaemon.github.io%2Fmorse--trainer-3ee6a8?style=for-the-badge)](https://bitdaemon.github.io/morse-trainer/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2bb3ff?style=for-the-badge)](LICENSE)
+
+<p align="center"><img src="docs/demo.gif" alt="Dit in action: tutorial, Learn, Copy, keying on the Morse tree, and theme switching" width="360"></p>
+
 A sleek, offline-capable Progressive Web App for learning Morse code by ear. No build step, no dependencies, no account. It's plain HTML, CSS and JavaScript.
 
 ## Features
@@ -32,6 +37,10 @@ You start with **K** and **M**. A new letter unlocks on the **Copy** tab once ev
 ## Themes
 Midnight · Daylight · Phosphor · Amber CRT · Nord · Dracula · Ocean · Sunset · Mono
 
+## Try it
+
+**Live:** <https://bitdaemon.github.io/morse-trainer/>. Open it on your phone and use *Add to Home Screen* to install it as an app.
+
 ## Run locally
 
 ```bash
@@ -61,3 +70,7 @@ Progress and settings are stored in the browser's `localStorage`; nothing leaves
 
 ## Browser support
 Current Chrome, Edge, Safari and Firefox (desktop and mobile). It requires the Web Audio API and CSS `color-mix()`.
+
+## License
+
+[MIT](LICENSE) © 2026 bitdaemon
