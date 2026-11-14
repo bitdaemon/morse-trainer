@@ -74,3 +74,7 @@ Current Chrome, Edge, Safari and Firefox (desktop and mobile). It requires the W
 ## License
 
 [MIT](LICENSE) © 2026 bitdaemon
+
+## A note on how this was built
+
+This is a vibe-coded project. I designed what it should do (the Koch-method lesson flow, how letters unlock, the Send and Tree tabs, the themes and the first-run tutorial) and I tested it by hand in my own browser, but most of the code was written with an AI assistant. It hasn't had a professional code review, and there's no automated test suite yet. If you spot something off, please [open an issue](https://github.com/bitdaemon/morse-trainer/issues).
