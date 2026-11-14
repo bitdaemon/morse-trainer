@@ -13,7 +13,7 @@
 <body>
 <header class="top">
   <div class="brand"><span class="dot"></span><span class="dash"></span><b>Dit</b></div>
-  <div class="stats"><span id="wpmBadge">20 WPM</span><span id="streak">🔥 0</span></div>
+  <div class="stats"><span id="wpmBadge">20 WPM</span><span id="streak">🔥 0</span><button id="helpBtn" class="help" aria-label="Show tutorial">?</button></div>
 </header>
 
 <main>
@@ -108,6 +108,7 @@
         <input type="range" id="win" min="5" max="50" step="5" value="20"></label>
       <label>Minimum attempts per letter <output id="minOut">10</output>
         <input type="range" id="minN" min="3" max="30" value="10"></label>
+      <button class="btn ghost" id="tutAgain" style="width:100%;margin-top:8px">Show tutorial</button>
       <button class="btn danger" id="reset">Reset progress</button>
     </div>
   </section>
@@ -122,5 +123,6 @@
 </nav>
 <script src="app.js"></script>
 <script src="tree.js"></script>
+<script src="tutorial.js"></script>
 </body>
 </html>

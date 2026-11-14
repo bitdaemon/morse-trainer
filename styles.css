@@ -91,3 +91,21 @@ input[type=range]{width:100%;margin-top:10px;accent-color:var(--acc)}
 .theme{border:2px solid var(--line);border-radius:14px;padding:10px;cursor:pointer;background:var(--t-bg);color:var(--t-text);font:600 12px inherit;font-family:inherit;text-align:left}
 .theme.on{border-color:var(--acc)}
 .theme .sw{display:flex;gap:4px;margin-bottom:8px}.theme .sw i{flex:1;height:14px;border-radius:4px}
+
+/* ---------- tutorial ---------- */
+.help{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:var(--text);font:700 14px inherit;font-family:inherit;cursor:pointer}
+.help:hover{border-color:var(--acc);color:var(--acc)}
+.tut{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:20px;background:color-mix(in srgb,var(--bg) 60%,transparent);backdrop-filter:blur(8px)}
+.tut.open{display:grid;animation:in .25s ease}
+.tut-card{position:relative;width:100%;max-width:440px;max-height:90dvh;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:30px 26px 18px;box-shadow:0 30px 80px #0008;text-align:center}
+.tut-card.swap .tut-icon,.tut-card.swap h2,.tut-card.swap .tut-body{animation:in .3s ease}
+.tut-x{position:absolute;top:14px;right:14px;background:none;border:0;color:var(--mute);font-size:18px;cursor:pointer}
+.tut-icon{height:64px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:44px;color:var(--acc)}
+.t-dot{width:22px;height:22px;border-radius:50%;background:var(--acc)}.t-dash{width:56px;height:22px;border-radius:11px;background:var(--acc2)}
+.tut-card h2{font-size:22px;margin:10px 0 12px}
+.tut-body{color:var(--mute);line-height:1.55;text-align:left;font-size:15px}
+.tut-body b{color:var(--text)}.tut-body ul{padding-left:20px;margin:6px 0}.tut-body li{margin:6px 0}
+.tut-dots{display:flex;justify-content:center;gap:6px;margin:20px 0 4px}
+.tut-dots i{width:7px;height:7px;border-radius:4px;background:var(--line);transition:.25s}.tut-dots i.on{width:22px;background:var(--acc)}
+.tut-nav{display:flex;justify-content:space-between;margin-top:14px}
+.tut-skip{background:none;border:0;color:var(--mute);font:13px inherit;font-family:inherit;margin-top:12px;cursor:pointer;text-decoration:underline}
